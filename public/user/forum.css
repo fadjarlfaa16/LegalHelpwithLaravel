@@ -1,0 +1,113 @@
+.keywords li {
+    margin-left: -2rem;
+    list-style: none;
+}
+
+.content-forum {
+    padding: 35px 2%;
+    width: 80%;
+    margin: 40px auto 0;
+    background-color: #ffffff;
+}
+.content-forum h2 {
+    text-align: center;
+}
+
+#statusSection {
+    border: none;
+    outline: none;
+}
+
+.navbar-brand {
+    font-weight: bold;
+}
+.keywords {
+    color: #555;
+    font-size: 0.9em;
+    margin-bottom: 20px;
+}
+.post-card {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 20px;
+    background-color: #f9f9f9;
+}
+.post-card .profile-picture {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #ccc;
+}
+.post-card .username {
+    font-weight: bold;
+}
+.post-card .time-posted {
+    color: #999;
+    font-size: 0.8em;
+}
+.post-card .post-content {
+    margin-top: 10px;
+    color: #333;
+}
+.post-card .likes-comments {
+    font-size: 0.9em;
+    color: #999;
+    margin-top: 5px;
+}
+.post-card .post-actions {
+    margin-top: 10px;
+    font-size: 0.9em;
+}
+.post-actions i {
+    margin-right: 5px;
+}
+.add-post-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background-color: #28a745;
+    border-radius: 50%;
+    color: white;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.typesection {
+    float: right;
+}
+
+.people-post img .interact {
+    padding: 0 10px;
+}
+
+@media (min-width: 400px) and (max-width: 599px) {
+    .content-forum {
+        width: 100%;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media (min-width: 600px) and (max-width: 799px) {
+    .content-forum {
+        width: 90%;
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media (min-width: 800px) and (max-width: 1279px) {
+    .content-forum {
+        width: 85%;
+    }
+}
+
+@media (min-width: 1280px) {
+    .content-forum {
+        width: 80%;
+    }
+}

@@ -1,0 +1,63 @@
+.content-consult {
+    padding: 30px 2%;
+    width: 80%;
+    margin: 60px auto 0;
+    background-color: #fff;
+}
+.search-bar {
+    margin-top: 20px;
+}
+
+#search-section {
+    padding: 0 10%;
+}
+
+#consultant {
+    background-color: #cf3b3b;
+}
+
+.card-text {
+    font-size: 14px;
+}
+.btn-primary {
+    background-color: #e0f7f6;
+    color: #2e6665;
+    border: 1px solid #2e6665;
+}
+.footer-banner {
+    background-color: #2e6665;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+.footer-banner .btn {
+    background-color: white;
+    color: #2e6665;
+    border: 1px solid #2e6665;
+}
+
+@media (min-width: 400px) and (max-width: 599px) {
+    .content-consult {
+        width: 100%;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media (min-width: 600px) and (max-width: 799px) {
+    .content-consult {
+        width: 90%;
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media (min-width: 800px) and (max-width: 1279px) {
+    .content-consult {
+        width: 85%;
+    }
+}
+
+@media (min-width: 1280px) {
+    .content-consult {
+        width: 80%;
+    }
+}

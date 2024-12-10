@@ -1,0 +1,48 @@
+nav h2 {
+    font-weight: 700;
+    font-style: italic;
+    margin-left: 1rem;
+    color: rgb(255, 255, 255);
+}
+
+.listNav {
+    margin-right: 2rem;
+}
+
+.listNav a {
+    margin-left: 25px;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+#judulNav {
+    width: 100%;
+    justify-content: end;
+}
+
+@media only screen and (max-width: 600px) {
+    #judulNav {
+        width: 95%;
+        justify-content: space-evenly;
+    }
+    #judulNav h2 {
+        font-size: 0;
+        display: none;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 601px) {
+    #judulNav {
+        width: 100%;
+        justify-content: space-between;
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    #judulNav {
+        width: 100%;
+        justify-content: space-between;
+    }
+}

@@ -1,0 +1,62 @@
+.content-notification {
+  margin: auto;
+  width: 80%;
+  height: 800px;
+  background-color: #fff;
+  padding: 0 2%;
+}
+
+.notification-card {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  padding: 15px;
+  background-color: #f8f9fa;
+}
+
+.content-notification a {
+  text-decoration: none;
+  color: black;
+}
+
+.content-notification a .notification-card:hover {
+  background-color: #cccccc;
+}
+
+.notification-title {
+  font-weight: bold;
+}
+.notification-message {
+  margin: 5px 0;
+}
+.notification-time {
+  font-size: 0.8rem;
+  color: gray;
+}
+
+/* Mobile Screen */
+@media (min-width: 400px) and (max-width: 599px) {
+  .content-notification {
+    width: 100%;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media (min-width: 600px) and (max-width: 799px) {
+  .content-notification {
+    width: 90%;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media (min-width: 800px) and (max-width: 1279px) {
+  .content-notification {
+    width: 85%;
+  }
+}
+
+@media (min-width: 1280px) {
+  .content-notification {
+    width: 80%;
+  }
+}

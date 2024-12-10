@@ -1,0 +1,132 @@
+#caption-on-carousel {
+    margin-left: -10%;
+    margin-top: 20rem;
+}
+
+.carousel-inner h2 {
+    font-size: 30pt;
+}
+
+.carousel-inner p {
+    font-size: 14pt;
+}
+
+.isiKonsul img,
+.isiKonsul h3,
+.isiKonsul p,
+.isiKonsul button {
+    margin-top: 10px;
+}
+
+.below-carousel {
+    padding: 0 5%;
+}
+
+/* Content */
+/* Isi konten untuk page Home.html */
+.content-home {
+    margin: 0 auto;
+    width: 80%;
+    background-color: #fff;
+    height: 2000px;
+}
+
+.isiKonsul p {
+    font-size: 16px;
+}
+
+.isiKonsul h3 {
+    font-size: 23px;
+    font-weight: 500;
+}
+
+.isiKonsul img {
+    width: 70%;
+    transform: translateX(20%);
+}
+
+/* Mobile Screen */
+@media (min-width: 400px) and (max-width: 599px) {
+    .content-home {
+        width: 100%;
+    }
+    .carousel-inner h2 {
+        font-size: 130%;
+        font-weight: 700;
+    }
+    .carousel-inner p {
+        font-size: 7.5pt;
+    }
+    .carousel-indicators {
+        opacity: 0;
+        pointer-events: none;
+    }
+    #caption-on-carousel {
+        transform: translateY(2.8rem);
+    }
+    .isiKonsul button {
+        font-size: small;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media (min-width: 600px) and (max-width: 799px) {
+    .content-home {
+        width: 90%;
+    }
+    .carousel-inner h2 {
+        font-size: 21pt;
+        font-weight: 700;
+    }
+    .carousel-inner p {
+        font-size: 9pt;
+    }
+    .carousel-indicators {
+        opacity: 0;
+        pointer-events: none;
+    }
+    #caption-on-carousel {
+        transform: translateY(2.8rem);
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media (min-width: 800px) and (max-width: 1279px) {
+    .content-home {
+        width: 85%;
+    }
+    .carousel-inner h2 {
+        font-size: 28.5pt;
+        font-weight: 700;
+    }
+    .carousel-inner p {
+        font-size: 12pt;
+    }
+    .carousel-indicators {
+        opacity: 0;
+        pointer-events: none;
+    }
+    #caption-on-carousel {
+        transform: translateY(2.8rem);
+    }
+}
+
+@media (min-width: 1280px) {
+    .content-home {
+        width: 80%;
+    }
+    .carousel-inner h2 {
+        font-size: 33pt;
+        font-weight: 700;
+    }
+    .carousel-inner p {
+        font-size: 15pt;
+    }
+    .carousel-indicators {
+        z-index: 10;
+        transform: translateY(-10px);
+    }
+    #caption-on-carousel {
+        transform: translateY(1rem);
+    }
+}

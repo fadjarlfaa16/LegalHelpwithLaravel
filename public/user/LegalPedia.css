@@ -1,0 +1,101 @@
+.content-legalpedia {
+    padding: 35px 2%;
+    width: 80%;
+    margin: 40px auto 0;
+    background-color: #fff;
+}
+
+.layouting-grid {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: 73% auto;
+    column-gap: 5%;
+    padding: 0 20px;
+}
+/* article */
+
+.news h1 {
+    font-weight: 500;
+}
+
+.newswrapper {
+    margin-top: 20px;
+}
+.newswrapper p {
+}
+
+.news-content a {
+    display: inline-block;
+}
+
+.news-content a span {
+    opacity: 0%;
+    transition: 0.25s;
+    display: inline-block;
+    color: aliceblue;
+    transform: translate(7%, -180%);
+    font-size: 20pt;
+    font-weight: 700;
+}
+
+.news-content a span h2 {
+    /* padding: 15px; */
+}
+
+.news-content a:hover span {
+    opacity: 100%;
+    color: #fff;
+}
+.news-content a:hover img {
+    filter: brightness(30%);
+    transition: 0.25s;
+}
+
+@media (min-width: 400px) and (max-width: 599px) {
+    .content-legalpedia {
+        width: 100%;
+    }
+    .layouting-grid {
+        margin-top: 30px;
+        display: grid;
+        grid-template-columns: 60% auto;
+        column-gap: 5%;
+        padding: 0 20px;
+    }
+    .news-content .caption {
+        margin-top: -55px;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media (min-width: 600px) and (max-width: 799px) {
+    .content-legalpedia {
+        width: 90%;
+    }
+    .layouting-grid {
+        margin-top: 30px;
+        display: grid;
+        grid-template-columns: 65% auto;
+        column-gap: 5%;
+        padding: 0 20px;
+    }
+    .news-content .caption {
+        margin-top: -45px;
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media (min-width: 800px) and (max-width: 1279px) {
+    .content-legalpedia {
+        width: 85%;
+    }
+    .news-content .caption {
+        margin-top: -27px;
+    }
+}
+
+@media (min-width: 1280px) {
+    .content-legalpedia {
+        width: 80%;
+    }
+}
