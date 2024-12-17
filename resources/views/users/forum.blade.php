@@ -2,8 +2,8 @@
 
   <div class="content-forum">
     <div class="container">
-      <h2 style="font-size: 25px">Forum.</h2>
-      <div class="keywords">
+      <h2 style="font-size: 25px">Sharing your experience with our Forum!</h2>
+      {{-- <div class="keywords">
         <p>
           <b>On Trending:</b><br />
           <a
@@ -19,7 +19,7 @@
             >#PDIPDihati</a
           >
         </p>
-      </div>
+      </div> --}}
 
       <!-- Update status -->
       <div class="w-100 bg-white p-4 rounded-lg">

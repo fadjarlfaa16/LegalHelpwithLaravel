@@ -12,7 +12,7 @@ export default {
     ],
     theme: {
         colors: {
-            maingreen: "#387478",
+            maingreen: "#1b5c60",
         },
         extend: {
             fontFamily: {

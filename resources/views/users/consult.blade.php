@@ -32,12 +32,15 @@
               />
               <h2 class="mt-4 font-semibold text-lg">Anthares Zaqi Derya Muhammad</h2>
               <p class="text-gray-600">Experienced 30+ years lawyer | Graduated from Harvard Law School | Crazy Rich Indramayu | 21 years old</p>
-              <button
+              <a href="detailofconsultant">
+                <button
                 class="mt-4 px-4 py-2 bg-teal-600 text-white rounded-lg hover:bg-teal-700 transition ease-in-out"
-                onclick="openModal()"
+                
               >
                 Consult Now!
               </button>
+              </a>
+              
             </div>
           
 

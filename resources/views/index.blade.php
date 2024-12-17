@@ -16,6 +16,9 @@
     />
   </head>
   <body>
+    <a href="admin/dashboard">
+      <button>Go to Admin Dashboard →</button>
+    </a>
     <div class="container">
       <div class="content">
         <div class="slogan">

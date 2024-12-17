@@ -3,7 +3,7 @@
       <div class="content-home">
         <div
           id="carouselExampleCaptions"
-          class="carousel slide"
+          class="carousel slide z-10"
           style="margin-top: 60px"
           data-bs-ride="carousel"
         >
@@ -38,11 +38,8 @@
           <div class="carousel-inner">
             <div class="carousel-item active" data-bs-interval="2000">
               <a href="#">
-                <img
-                  src="../img/background1.webp"
-                  class="d-block w-100"
-                  alt="Berita1"
-                />
+                <div class="imgcarouselplaceholder" style="background-image:url('../img/background1.webp')">
+                </div>
               </a>
               <div class="carousel-caption text-start" id="caption-on-carousel">
                 <h2>Headline #1</h2>
@@ -56,11 +53,8 @@
             </div>
             <div class="carousel-item" data-bs-interval="2000">
               <a href="#">
-                <img
-                  src="../img/background1.webp"
-                  class="d-block w-100"
-                  alt="Berita1"
-                />
+                <div class="imgcarouselplaceholder" style="background-image:url('../img/background1.webp')">
+                </div>
               </a>
               <div
                 class="carousel-caption d-md-block text-start mb-1"
@@ -77,11 +71,8 @@
             </div>
             <div class="carousel-item" data-bs-interval="2000">
               <a href="#">
-                <img
-                  src="../img/background1.webp"
-                  class="d-block w-100"
-                  alt="Berita1"
-                />
+                <div class="imgcarouselplaceholder" style="background-image:url('../img/background1.webp')">
+                </div>
               </a>
               <div
                 class="carousel-caption d-md-block text-start mb-1"
@@ -98,11 +89,8 @@
             </div>
             <div class="carousel-item" data-bs-interval="2000">
               <a href="#">
-                <img
-                  src="../img/background1.webp"
-                  class="d-block w-100"
-                  alt="Berita1"
-                />
+                <div class="imgcarouselplaceholder" style="background-image:url('../img/background1.webp')">
+                </div>
               </a>
               <div
                 class="carousel-caption d-md-block text-start"
@@ -141,8 +129,8 @@
         <!-- Top Konsultan -->
         <div class="below-carousel">
           <div class="text-center">
-            <h2 style="margin-top: 2rem; font-size: 28px;">Weekly Top Legal Consultant</h2>
-            <div class="container" style="margin: 3.5rem 2rem 2rem 0">
+            <h2 style="margin-top: 1.5rem; font-size: 150%; font-weight:600;">Weekly Top Legal Consultant</h2>
+            <div class="container" style="margin: 2.3rem 2rem 2rem 0">
               <div class="row justify-content-center">
                 <div class="col-4 text-center">
                   <h2 class="text-start">#2</h2>

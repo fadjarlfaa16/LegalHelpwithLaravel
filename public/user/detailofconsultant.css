@@ -1,0 +1,106 @@
+.content-detailofconsultant {
+    padding: 35px 5%;
+    width: 80%;
+    margin: 40px auto 0;
+    background-color: #fff;
+}
+
+.detail-of-consultant-profile {
+    width: 280px;
+    height: 280px;
+    background-color: blue;
+    border-radius: 280px;
+    margin-left: 40px;
+}
+
+.reservation {
+    display: grid;
+    grid-template-columns: 40% auto;
+    margin-top: 30px;
+}
+
+.schedule h1 {
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.detailsofpersonal {
+    display: grid;
+    grid-template-columns: 25% 25% 50%;
+    margin-top: 5px;
+    column-gap: 3px;
+}
+
+.based-in {
+    grid-area: based-in;
+}
+.case-solved {
+    grid-area: case-solved;
+}
+.graduated {
+    grid-area: graduated;
+}
+.price {
+}
+
+.detailsofpersonal .price p {
+    font-size: 20px;
+}
+
+/* Responsif */
+
+@media (min-width: 400px) and (max-width: 599px) {
+    .content-detailofconsultant {
+        width: 100%;
+    }
+    .detail-of-consultant-profile {
+        width: 120px;
+        height: 120px;
+        background-color: blue;
+        border-radius: 100%;
+        margin-left: 10px;
+    }
+    .schedule h1 {
+        font-size: 1.5rem;
+    }
+    .detailsofpersonal p {
+        font-size: 12px;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media (min-width: 600px) and (max-width: 799px) {
+    .content-detailofconsultant {
+        width: 90%;
+    }
+    .detail-of-consultant-profile {
+        width: 160px;
+        height: 160px;
+        background-color: blue;
+        border-radius: 100%;
+        margin-left: 16px;
+    }
+    .schedule h1 {
+        font-size: 1.6rem;
+    }
+    .detailsofpersonal p {
+        font-size: 13px;
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media (min-width: 800px) and (max-width: 1279px) {
+    .content-detailofconsultant {
+        width: 85%;
+    }
+    .detail-of-consultant-profile {
+        width: 220px;
+        height: 220px;
+        background-color: blue;
+        border-radius: 280px;
+        margin-left: 11px;
+    }
+    .schedule h1 {
+        font-size: 1.7rem;
+    }
+}

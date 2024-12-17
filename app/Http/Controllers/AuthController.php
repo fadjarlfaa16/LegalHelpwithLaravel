@@ -1,45 +1,67 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 
 class AuthController extends Controller
 {
-    function showRegister() {
-        return view('register');
+
+    // public function showLogin()
+    // {
+    //     return view('auth.login');
+    // }
+
+    // public function login(Request $request)
+    // {
+    //     $credentials = $request->only('email', 'password');
+
+    // if (Auth::attempt($credentials)) {
+    //     $user = Auth::user();
+
+    //     if ($user->role === 'admin') {
+    //         return redirect()->route('admin.dashboard');
+    //     } elseif ($user->role === 'consultant') {
+    //         return redirect()->route('consultant.dashboard');
+    //     } else {
+    //         return redirect()->route('users.index');
+    //     }
+    // }
+
+    // return back()->withErrors(['email' => 'Email atau password salah.']);
+    // }
+
+    public function showRegister()
+    {
+        return view('auth.register');
     }
 
-    function submitRegister(Request $request) {
-        $user = new User();
-        $user->name = $request->name;
-        $user->email = $request->email;
-        $user->password = bcrypt($request->password);
-        $user->save();
-        // dd($user);
-        return redirect()->route('login.show');
+    public function register(Request $request)
+    {
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|unique:users,email',
+            'password' => 'required|min:6|confirmed',
+            'role' => 'required|in:consultant,user',
+        ]);
+
+        User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+            'role' => $request->role,
+        ]);
+
+        return redirect()->route('login')->with('success', 'Registrasi berhasil, silakan login.');
     }
 
-    function showLogin() {
-        return view('login');
-    }
-
-    function submitLogin(Request $request) {
-        $data = $request->only('email', 'password');
-
-        if(Auth::attempt($data)) {
-            $request->session()->regenerate();
-            return redirect()->route('users.home');
-        }else {
-            return redirect()->back()->with('failed', 'Wrong Email and Password input');
-        }
-    }
-
-    function logout() {
+    public function logout()
+    {
         Auth::logout();
-        return redirect()->route('login.show');
+        return redirect()->route('login');
     }
 }
+?>
