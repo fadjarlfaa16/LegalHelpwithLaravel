@@ -20,17 +20,14 @@ class UserAccess
     public function handle(Request $request, Closure $next, $role): Response
     {
         if (Auth::user()->role == $role) {
-            // if (request()->path() == 'users' || request()->path() == 'consultant' || request()->path() == 'admin') {
-            //     dd(redirect(url()->previous()));
-            // }
+
             return $next($request);
             // return redirect(url()->previous());
         } elseif (Auth::check()) {
             if (Auth::user()->role == 'admin' && request()->path() != 'admin') {
-                return redirect('/admin');
+                return redirect('/admin/dashboard');
             } elseif (Auth::user()->role == 'consultant' && request()->path() != 'consultant') {
-                // response()->json([request()->path()]);
-                return redirect('/consultant');
+                return redirect('/consultant/workspace');
             } elseif (Auth::user()->role == 'user' && request()->path() != 'users') {
                 return redirect('/users');
             }

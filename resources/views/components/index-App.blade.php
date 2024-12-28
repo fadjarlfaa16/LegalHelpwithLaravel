@@ -5,6 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>LegalHelp</title>
+    <link rel="icon" href="../img/ico/legalhelplogo.ico" type="image/x-icon" />
     <link rel="stylesheet" href="indexstyle.css" />
     <link rel="stylesheet" href="register.css" />
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
@@ -23,29 +24,29 @@
             </div>
             <a href="../register" class="start" id="start">Get Started →</a>
         </div>
-
         @if (trim($slot ?? '') !== '')
             {{ $slot }}
         @endif
+    </div>
 
 
 
-        <script src="https://cdn.tailwindcss.com"></script>
-        <script src="typed.js/dist/typed.umd.js"></script>
-        <script src="jquery.js"></script>
-        <script>
-            var typed = new Typed("#element", {
-                strings: ["legals violation", "jail"],
-                typeSpeed: 50,
-                backSpeed: 50,
-                loop: true,
-                loopCount: Infinity,
-            });
-        </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="typed.js/dist/typed.umd.js"></script>
+    <script src="jquery.js"></script>
+    <script>
+        var typed = new Typed("#element", {
+            strings: ["legals violation", "jail"],
+            typeSpeed: 50,
+            backSpeed: 50,
+            loop: true,
+            loopCount: Infinity,
+        });
+    </script>
 
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
-        </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+    </script>
 </body>
 
 </html>

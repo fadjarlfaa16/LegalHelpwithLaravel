@@ -10,11 +10,13 @@ class AdminSeeder extends Seeder
 {
     public function run()
     {
-        User::create([
-            'name' => 'Admin',
-            'email' => 'admin@legalhelp.com',
-            'password' => bcrypt('laravel'),
-            'role' => 'admin'
-        ]);
+        User::create(
+            [
+                'name' => 'Admin',
+                'email' => 'admin@legalhelp.com',
+                'password' => bcrypt('laravel'),
+                'role' => 'admin'
+            ]
+        );
     }
 }

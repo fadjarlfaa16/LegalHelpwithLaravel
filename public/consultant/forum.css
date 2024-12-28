@@ -1,0 +1,117 @@
+.content-forum {
+    padding: 30px 2%;
+    width: 80%;
+    margin: 60px auto 0;
+    background-color: #fff;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #f7f9fc;
+    border: 1px solid #d1d9e6;
+    border-radius: 15px;
+}
+
+.form img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.form textarea {
+    flex: 1;
+    padding: 12px;
+    font-size: 16px;
+    border: 2px solid #d1d9e6;
+    border-radius: 10px;
+    outline: none;
+    transition: all 0.3s ease;
+    background-color: #fff;
+    resize: none;
+    min-height: 50px;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.form textarea:focus {
+    border-color: #4a90e2;
+    box-shadow: 0 0 8px rgba(74, 144, 226, 0.3);
+}
+
+.form button {
+    padding: 12px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #4a90e2;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.form button:hover {
+    background-color: #357abd;
+}
+
+.threads {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.thread {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    transition: box-shadow 0.3s;
+}
+
+.thread:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.thread img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.thread-content {
+    flex: 1;
+}
+
+.thread-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0 0 5px;
+}
+
+.thread-text {
+    font-size: 14px;
+    color: #666;
+}
+
+.thread-time {
+    font-size: 12px;
+    color: #999;
+    margin-top: 5px;
+}

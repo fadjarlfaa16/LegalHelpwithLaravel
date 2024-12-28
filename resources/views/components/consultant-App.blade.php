@@ -7,13 +7,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>LegalHelp</title>
     <link rel="icon" href="../img/ico/legalhelplogo.ico" type="image/x-icon" />
-    <link rel="stylesheet" href="../user/consult.css" />
-    <link rel="stylesheet" href="../user/homestyle.css" />
-    <link rel="stylesheet" href="../user/legalpedia.css" />
-    <link rel="stylesheet" href="../user/detailofconsultant.css" />
-    <link rel="stylesheet" href="../user/forum.css" />
-    <link rel="stylesheet" href="../user/navbar.css" />
-    <link rel="stylesheet" href="../user/profile.css" />
+    <link rel="stylesheet" href="../consultant/workspace.css" />
+    <link rel="stylesheet" href="../consultant/forum.css" />
+    <link rel="stylesheet" href="../consultant/profile.css" />
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
@@ -26,20 +22,12 @@
         <div class="ml-auto">
             <ul class="navbar-nav ms-auto list-group-horizontal navbar-dark">
                 <li class="nav-item px-3 ">
-                    <a class="nav-link  {{ Route::is('users.home.view') ? 'active' : '' }}"
-                        href="{{ route('users.home.view') }}">Home</a>
+                    <a class="nav-link {{ Route::is('consultant.workspace.view') ? 'active' : '' }}"
+                        href="{{ route('consultant.workspace.view') }}">Workspace</a>
                 </li>
                 <li class="nav-item px-3">
-                    <a class="nav-link {{ Route::is('users.consult.view') ? 'active' : '' }}"
-                        href="{{ route('users.consult.view') }}">Consult</a>
-                </li>
-                <li class="nav-item px-3">
-                    <a class="nav-link {{ Route::is('users.forum.view') ? 'active' : '' }}"
-                        href="{{ route('users.forum.view') }}">Forum</a>
-                </li>
-                <li class="nav-item px-3">
-                    <a class="nav-link {{ Route::is('users.legalpedia.view') ? 'active' : '' }}"
-                        href="{{ route('users.legalpedia.view') }}">LegalPedia</a>
+                    <a class="nav-link {{ Route::is('consultant.forum.view') ? 'active' : '' }}"
+                        href="{{ route('consultant.forum.view') }}">Forum</a>
                 </li>
             </ul>
         </div>
@@ -63,8 +51,8 @@
             </form>
         </div>
         <nav class="mt-4">
-            <a href="{{ route('users.profile.view') }}" class="block py-2 px-4 hover:bg-gray-700 rounded">Profile</a>
-            {{-- <a href="#" class="block py-2 px-4 hover:bg-gray-700 rounded">Top Up</a> --}}
+            <a href=" {{ route('consultant.profile.view') }}"
+                class="block py-2 px-4 hover:bg-gray-700 rounded">Profile</a>
             <a href="#" class="block py-2 px-4 hover:bg-gray-700 rounded">Dark Mode</a>
         </nav>
     </div>

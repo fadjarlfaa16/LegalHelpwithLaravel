@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
 class SessionController extends Controller
-{   
+{
     public function showRegister()
     {
         return view('auth.register');
@@ -33,11 +33,13 @@ class SessionController extends Controller
         return redirect()->route('login')->with('success', 'Registrasi berhasil, silakan login.');
     }
 
-    function showLogin(){
+    function showLogin()
+    {
         return view('auth.login');
     }
 
-    function login(Request $request){
+    function login(Request $request)
+    {
         $request->validate([
             'email' => 'required',
             'password' => 'required'
@@ -51,19 +53,20 @@ class SessionController extends Controller
             'password' => $request->password
         ];
 
-        if(Auth::attempt($infologin)){
-            if (Auth::user()->role == 'admin'){
-                return redirect('/admin');
+        if (Auth::attempt($infologin)) {
+            if (Auth::user()->role == 'admin') {
+                return redirect('/admin/dashboard');
             } elseif (Auth::user()->role == 'consultant') {
-                return redirect('/consultant');
+                return redirect('/consultant/workspace');
             } elseif (Auth::user()->role == 'user') {
                 return redirect('/users');
-            }          
-        }else {
+            }
+        } else {
             return redirect("/login")->withErrors('Wrong input either username or input')->withInput();
-        } 
+        }
     }
-    public function logout(){
+    public function logout()
+    {
         Auth::logout();
         return redirect()->route('login');
     }
