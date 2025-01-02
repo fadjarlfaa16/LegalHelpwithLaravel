@@ -43,17 +43,15 @@
             <img src="../storage/profile/{{ Auth::user()->profile_path }}" alt="Profile Picture"
                 class="w-20 h-20 rounded-full border-2 border-gray-700 mb-2">
             @if (Auth::check())
-                <h2 class="mb-1">{{ Auth::user()->name }}</h2>
+                <h2 class="mb-1 font-bold">{{ Auth::user()->name }}</h2>
+                <p class="text-sm">{{ Auth::user()->address }}</p>
             @endif
-            <p class="text-sm font-bold text-green-500">$ -</p>
-            <form action="{{ route('logout') }}">
-                <button class="btn btn-danger btn-sm mt-1">Logout</button>
-            </form>
+            <p class="text-emerald-200">Online</p>
         </div>
         <nav class="mt-4">
             <a href=" {{ route('consultant.profile.view') }}"
                 class="block py-2 px-4 hover:bg-gray-700 rounded">Profile</a>
-            <a href="#" class="block py-2 px-4 hover:bg-gray-700 rounded">Dark Mode</a>
+            <a href="{{ route('logout') }}" class="block py-2 px-4 hover:bg-gray-700 rounded">Logout</a>
         </nav>
     </div>
 

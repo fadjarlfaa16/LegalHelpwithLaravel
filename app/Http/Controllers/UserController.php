@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Article;
 use App\Models\Forum;
 use App\Models\Schedule;
+use App\Models\TopArticle;
+use App\Models\TopConsultant;
+use App\Models\TopForum;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -13,7 +17,17 @@ class UserController extends Controller
 {
     public function HomeView()
     {
-        return view('users.home');
+        // first berguna untuk se
+        $topConsultant1 = TopConsultant::with('user')->where('position', 1)->first();
+        $topConsultant2 = TopConsultant::with('user')->where('position', 2)->first();
+        $topConsultant3 = TopConsultant::with('user')->where('position', 3)->first();
+        $toparticle1 = TopArticle::with('article')->where('position', 1)->first();
+        $toparticle2 = TopArticle::with('article')->where('position', 2)->first();
+        $toparticle3 = TopArticle::with('article')->where('position', 3)->first();
+        $toparticle4 = TopArticle::with('article')->where('position', 4)->first();
+        $forum = Forum::orderBy('id', 'desc')->take(4)->get();
+
+        return view('users.home', compact('forum', 'topConsultant1', 'topConsultant2', 'topConsultant3', 'toparticle1', 'toparticle2', 'toparticle3', 'toparticle4'));
     }
 
     public function ConsultView()
@@ -29,8 +43,10 @@ class UserController extends Controller
     }
 
     public function LegalpediaView()
+
     {
-        return view('users.legalpedia');
+        $article = Article::all();
+        return view('users.legalpedia', compact('article'));
     }
 
     public function ProfileView()
@@ -76,8 +92,7 @@ class UserController extends Controller
             'username' => $user->name,
             'email' => $user->email,
             'content' => $request->input('content'),
-            'profile' => 'apa aja',
-            'like' => 0,
+            'profile' => $user->profile_path
         ]);
         return redirect('/users/forum');
     }
@@ -86,10 +101,16 @@ class UserController extends Controller
     {
         $forum = Forum::findOrFail($id);
         $forum->delete();
-        return redirect('/users/consultant');
+        return redirect('/users/forum');
     }
 
+    //Legalpedia
 
+    public function LegalpediaDetailView($id)
+    {
+        $article = Article::findOrFail($id);
+        return view('users.detailoflegalpedia', compact('article'));
+    }
 
     //Profile
 
@@ -102,10 +123,8 @@ class UserController extends Controller
                 Storage::disk('public')->delete($user->profile_path);
             }
             $originalFileName = $request->file('profile_path')->getClientOriginalName();
-
             // Simpan file dengan nama aslinya ke storage/public/profile
-            $path = $request->file('profile_path')->storeAs('profile', $originalFileName, 'public');
-
+            $request->file('profile_path')->storeAs('profile', $originalFileName, 'public');
             $user->profile_path = $originalFileName;
         }
 

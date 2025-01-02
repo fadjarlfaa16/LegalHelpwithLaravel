@@ -1,0 +1,48 @@
+.content-detailoflegalpedia {
+    padding: 35px 2%;
+    width: 80%;
+    margin: 40px auto 0;
+    background-color: #ffffff;
+}
+
+/* Article Image */
+.article-image {
+    width: 100fr;
+    height: 400px;
+    border-radius: 2px;
+    background-size: cover;
+}
+
+/* Article Title */
+.article-detail-title {
+    font-size: 2em;
+    font-weight: bold;
+    margin: 20px 0 10px;
+    color: #333;
+}
+
+/* Posted On */
+.posted-on {
+    font-size: 0.9em;
+    color: #777;
+    margin-bottom: 20px;
+}
+
+/* Article Content */
+.article-content {
+    font-size: 1.1em;
+    color: #444;
+    line-height: 1.8;
+    margin-top: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .article-title {
+        font-size: 1.8em;
+    }
+
+    .article-content {
+        font-size: 1em;
+    }
+}

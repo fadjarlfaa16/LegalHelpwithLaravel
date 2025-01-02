@@ -1,8 +1,12 @@
 <x-admin-App>
     <div class="content-legalpedia">
+        @if (session('success'))
+            <x-success-messege>{{ session('success') }}</x-success-messege>
+        @endif
 
-
-        <a href="{{ route('admin.legalpedia.create') }}">Create Article</a>
+        <a href="{{ route('admin.legalpedia.create') }}"
+            class="text-white btn bg-emerald-600 hover:bg-emerald-700 mb-5">Create
+            Article</a>
 
         @foreach ($article as $i)
             <div class="container">
@@ -19,11 +23,10 @@
                     <form action="{{ route('admin.legalpedia.delete', $i->id) }}" method="POST" class="d-inline">
                         @csrf
                         @method('DELETE')
-                        <button type="submit" class="btn btn-sm btn-danger">Hapus</button>
+                        <button type="submit" class="btn btn-sm btn-danger">Delete</button>
                     </form>
                 </div>
         @endforeach
     </div>
-
 
 </x-admin-App>

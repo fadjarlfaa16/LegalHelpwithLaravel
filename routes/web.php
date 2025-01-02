@@ -31,35 +31,36 @@ Route::middleware(['auth'])->group(function () {
 
         // Tampilan Utama Dashboard Admin
         Route::get('/dashboard', [AdminController::class, 'AdminMainView'])->name('admin.dashboard');
+        Route::delete('/dashboard={id}', [AdminController::class, 'DeleteUser'])->name('admin.dashboard.deleteuser');
 
 
         // Tampilan Rekomendasi
         Route::get('recommended', [AdminController::class, 'RecommendedView'])->name('admin.recommended.view');
 
         // Rekomendasi Consultant
-        Route::get('topconsultant/create', [AdminController::class, 'CreateTopConsultant'])->name('admin.recommended.topconsultant.create');
+        Route::get('topconsultant=create', [AdminController::class, 'CreateTopConsultant'])->name('admin.recommended.topconsultant.create');
         Route::post('/top-consultant', [AdminController::class, 'AddTopConsultant'])->name('admin.recommended.topconsultant.add');
-        Route::get('/top-consultant/{id}/edit', [AdminController::class, 'EditTopConsultant'])->name('admin.recommended.topconsultant.edit');
+        Route::get('/top-consultant={id}edit', [AdminController::class, 'EditTopConsultant'])->name('admin.recommended.topconsultant.edit');
         Route::put('/top-consultant/{id}/update', [AdminController::class, 'UpdateTopConsultant'])->name('admin.recommended.topconsultant.update');
         Route::get('/top-consultant/{id}/delete', [AdminController::class, 'DeleteTopConsultant'])->name('admin.recommended.topconsultant.delete');
 
         // Rekomendasi Article
-        Route::get('toparticle/create', [AdminController::class, 'CreateTopArticle'])->name('admin.recommended.toparticle.create');
+        Route::get('toparticle=create', [AdminController::class, 'CreateTopArticle'])->name('admin.recommended.toparticle.create');
         Route::post('/top-article', [AdminController::class, 'AddTopArticle'])->name('admin.recommended.toparticle.add');
-        Route::get('/top-article/{id}/edit', [AdminController::class, 'EditTopArticle'])->name('admin.recommended.toparticle.edit');
+        Route::get('/top-article={id}edit', [AdminController::class, 'EditTopArticle'])->name('admin.recommended.toparticle.edit');
         Route::put('/top-article/{id}/update', [AdminController::class, 'UpdateTopArticle'])->name('admin.recommended.toparticle.update');
         Route::get('/top-article/{id}/delete', [AdminController::class, 'DeleteTopArticle'])->name('admin.recommended.toparticle.delete');
 
         // Manipulasi Forum
         Route::get('/forum', [AdminController::class, 'ForumView'])->name('admin.forum.view');
-        Route::delete('/forum/{id}/delete', [AdminController::class, 'DeDeleteForum'])->name('admin.forum.delete');
+        Route::delete('/forum/{id}/delete', [AdminController::class, 'DeleteForum'])->name('admin.forum.delete');
 
 
         // // Manipulasi LegalPedia
         Route::get('legalpedia', [AdminController::class, 'LegalpediaView'])->name('admin.legalpedia.view');
-        Route::get('legalpedia/create-legalpedia', [AdminController::class, 'CreateArticle'])->name('admin.legalpedia.create');
+        Route::get('legalpedia=create-legalpedia', [AdminController::class, 'CreateArticle'])->name('admin.legalpedia.create');
         Route::post('legalpedia/create-legalpedia', [AdminController::class, 'AddArticle'])->name('admin.legalpedia.add');
-        Route::get('legalpedia/{id}/edit-legalpedia', [AdminController::class, 'EditArticle'])->name('admin.legalpedia.edit');
+        Route::get('legalpedia={id}edit-legalpedia', [AdminController::class, 'EditArticle'])->name('admin.legalpedia.edit');
         Route::put('legalpedia/{id}', [AdminController::class, 'UpdateArticle'])->name('admin.legalpedia.update');
         Route::delete('legalpedia/{id}', [AdminController::class, 'DeleteArticle'])->name('admin.legalpedia.delete');
     });
@@ -70,6 +71,8 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/workspace', [ConsultantController::class, 'WorkspaceView'])->name('consultant.workspace.view');
 
         Route::get('/forum', [ConsultantController::class, 'ForumView'])->name('consultant.forum.view');
+        Route::post('forum', [ConsultantController::class, 'AddForum'])->name('consultant.forum.add');
+        Route::delete('forum/{id}', [ConsultantController::class, 'DeleteForum'])->name('consultant.forum.delete');
 
 
         //Profile
@@ -98,6 +101,7 @@ Route::middleware(['auth'])->group(function () {
 
         // Navigasi ke Legalpedia
         Route::get('legalpedia', [UserController::class, 'LegalpediaView'])->name('users.legalpedia.view');
+        Route::get('detailoflegalpedia={id}', [UserController::class, 'LegalpediaDetailView'])->name('users.legalpedia.detail.view');
 
         // Navigasi ke Profile
         Route::get('profile', [UserController::class, 'ProfileView'])->name('users.profile.view');

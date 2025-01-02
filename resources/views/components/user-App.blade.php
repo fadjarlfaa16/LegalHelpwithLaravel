@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="../user/forum.css" />
     <link rel="stylesheet" href="../user/navbar.css" />
     <link rel="stylesheet" href="../user/profile.css" />
+    <link rel="stylesheet" href="../user/detailoflegalpedia.css" />
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
@@ -55,17 +56,16 @@
             <img src="../storage/profile/{{ Auth::user()->profile_path }}" alt="Profile Picture"
                 class="w-20 h-20 rounded-full border-2 border-gray-700 mb-2">
             @if (Auth::check())
-                <h2 class="mb-1">{{ Auth::user()->name }}</h2>
+                <h2 class="mb-1 font-bold">{{ Auth::user()->name }}</h2>
+                <p class="text-sm">{{ Auth::user()->address }}</p>
             @endif
-            <p class="text-sm font-bold text-green-500">$ -</p>
-            <form action="{{ route('logout') }}">
-                <button class="btn btn-danger btn-sm mt-1">Logout</button>
-            </form>
+            <p class="text-emerald-200">Online</p>
+
         </div>
         <nav class="mt-4">
             <a href="{{ route('users.profile.view') }}" class="block py-2 px-4 hover:bg-gray-700 rounded">Profile</a>
             {{-- <a href="#" class="block py-2 px-4 hover:bg-gray-700 rounded">Top Up</a> --}}
-            <a href="#" class="block py-2 px-4 hover:bg-gray-700 rounded">Dark Mode</a>
+            <a href="{{ route('logout') }}" class="block py-2 px-4 hover:bg-gray-700 rounded">Logout</a>
         </nav>
     </div>
 

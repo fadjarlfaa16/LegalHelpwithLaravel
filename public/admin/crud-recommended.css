@@ -1,26 +1,26 @@
-.content-profile {
-    padding: 35px 2%;
+.container-crud {
+    padding: 30px 2%;
     width: 80%;
-    margin: 40px auto 0;
-    background-color: #ffffff;
+    min-height: 90vh;
+    margin: auto;
+    background-color: #fff;
 }
 
 @media (min-width: 400px) and (max-width: 599px) {
-    .content-profile {
+    .container-crud {
         width: 100%;
     }
 }
 
-/* Medium devices (landscape tablets, 768px and up) */
 @media (min-width: 600px) and (max-width: 799px) {
-    .content-profile {
-        width: 90%;
+    .container-crud {
+        width: 100%;
     }
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media (min-width: 800px) and (max-width: 1279px) {
-    .content-profile {
+    .container-crud {
         width: 85%;
     }
 }

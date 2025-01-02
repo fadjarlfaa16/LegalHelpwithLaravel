@@ -44,8 +44,28 @@ tbody tr:hover {
     background-color: #f1f1f1;
 }
 
-/* Responsive Design */
-@media screen and (max-width: 768px) {
+.table-minimalist .pic {
+    width: 40px;
+    height: 40px;
+    border-radius: 40px;
+    object-fit: cover;
+}
+
+@media (min-width: 400px) and (max-width: 599px) {
+    .content-dashboard {
+        width: 100%;
+    }
+    th,
+    td {
+        font-size: 12px;
+        padding: 8px;
+    }
+}
+
+@media (min-width: 600px) and (max-width: 799px) {
+    .content-dashboard {
+        width: 100%;
+    }
     table {
         display: block;
         overflow-x: auto;
@@ -58,10 +78,9 @@ tbody tr:hover {
     }
 }
 
-@media screen and (max-width: 480px) {
-    th,
-    td {
-        font-size: 12px;
-        padding: 8px;
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media (min-width: 800px) and (max-width: 1279px) {
+    .content-dashboard {
+        width: 85%;
     }
 }

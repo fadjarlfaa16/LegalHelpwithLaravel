@@ -1,50 +1,5 @@
 <x-consultant-App>
     <div class="content-profile">
-        {{-- <h2>Profile</h2>
-        <div class="profile-picture">
-            <img src="
-            @if (Auth::user()->profile_path == null) https://via.placeholder.com/200
-            @else
-                ../storage/profile/{{ Auth::user()->profile_path }} @endif
-            "
-                alt="Profile Picture" class="w-40 h-40 rounded-full border-2 border-gray-700 mb-2">
-        </div>
-        <div class="update-profile">
-            <div class="form-updater">
-
-                <form action="{{ route('consultant.profile.update') }}" method="POST" enctype="multipart/form-data">
-                    @csrf
-                    @method('PUT')
-                    <div class="col-8">
-                        <input type="file" name="profile_path" accept="image/"> <br>
-                        <label for="name">Fullname</label>
-                        <input type="text" name="name" id="name" placeholder="{{ Auth::user()->name }}"
-                            class="form-control mb-2">
-                    </div>
-                    <div class="col-8">
-                        <label for="email">Email</label>
-                        <input type="email" name="email" id="email" class="form-control mb-2"
-                            placeholder="{{ Auth::user()->email }}">
-                    </div>
-                    <div class="col-8">
-                        <label for="mobile_number">Mobile Number</label>
-                        <input type="text" name="mobile_number" id="mobile_number" class="form-control mb-2"
-                            placeholder="{{ Auth::user()->mobile_number }}" required>
-                    </div>
-                    <div class="col-8">
-                        <label for="address">Address</label>
-                        <input type="text" name="address" id="address" class="form-control mb-2"
-                            placeholder="{{ Auth::user()->address }}">
-                    </div>
-                    <div class="col-8">
-                        <label for="bio">Bio</label>
-                        <input type="text" name="bio" id="bio" class="form-control mb-2"
-                            placeholder="{{ Auth::user()->bio }}">
-                    </div>
-                    <button type="submit">Submit</button>
-
-                </form>
-            </div> --}}
         <div class="max-w-3xl mx-auto py-8 px-4">
             <div class="text-center">
                 <div class="relative">
@@ -52,13 +7,13 @@
             @else
                 ../storage/profile/{{ Auth::user()->profile_path }} @endif"
                         alt="Profile Picture"
-                        class="w-32 h-32 mx-auto rounded-full border-4 border-blue-500 object-cover">
-                    <form class="mt-8 space-y-5" action="{{ route('consultant.profile.update') }}" method="POST"
+                        class="w-32 h-32 mx-auto rounded-full border-4 border-emerald-600 object-cover">
+                    <form class="mt-3 space-y-5" action="{{ route('consultant.profile.update') }}" method="POST"
                         enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
                         <label for="profile_path"
-                            class="mt-2 ml-[1%] bg-blue-500 text-white px-3 py-1 text-s rounded-full cursor-pointer hover:bg-blue-600">
+                            class="mt-2 ml-[1%] bg-emerald-600 text-white px-3 py-1 text-s rounded-full cursor-pointer hover:bg-emerald-700 ease-in duration-150">
                             Select Photo
                         </label>
                         <input type="file" name="profile_path" id="profile_path" class="hidden">
@@ -111,7 +66,7 @@
 
 
             <button type="submit"
-                class=" w-full py-3 px-4 bg-blue-500 text-white font-medium rounded-md shadow hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400">
+                class="mt-3 ease-in-out duration-300 w-full py-3 px-4 bg-emerald-600 text-white font-medium rounded-md shadow hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-emerald-500">
                 Save Changes
             </button>
             </form>

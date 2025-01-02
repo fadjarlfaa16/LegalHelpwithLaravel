@@ -1,5 +1,8 @@
 <x-admin-App>
     <div class="content-dashboard">
+        @if (session('success'))
+            <x-success-messege>{{ session('success') }}</x-success-messege>
+        @endif
         <!-- Main Content -->
 
         <!-- Stats Section -->
@@ -24,47 +27,6 @@
 
         <h2 class="text-2xl font-bold mb-4">Data Users</h2>
         <div class="overflow-x-auto">
-            {{-- <table class="min-w-full bg-white border border-gray-300">
-                <thead class="bg-[#1b5c60] text-white">
-                    <tr>
-                        <th class="py-2 px-4 border-b text-center">Profile</th>
-                        <th class="py-2 px-4 border-b text-center">Fullname</th>
-                        <th class="py-2 px-4 border-b text-center">Email</th>
-                        <th class="py-2 px-4 border-b text-center">Telephone Number</th>
-                        <th class="py-2 px-4 border-b text-center">Address</th>
-                        <th class="py-2 px-4 border-b text-center">Role</th>
-                        <th class="py-2 px-4 border-b text-center">Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach ($users as $i)
-                        @if ($i->role != 'admin')
-                            <tr class="hover:bg-gray-100">
-                                <td class="py-2 px-4 border-b"><img src="{{ $i->profile_path }}" alt="No Profile">
-                                </td>
-                                <td class="py-2 px-4 border-b ">{{ $i->name }}</td>
-                                <td class="py-2 px-4 border-b">{{ $i->email }}</td>
-                                @if ($i->mobile_number != null)
-                                    <td class="py-2 px-4 border-b">{{ $i->mobile_number }}</td>
-                                @else
-                                    <td class="py-2 px-4 border-b">unset</td>
-                                @endif
-                                @if ($i->address != null)
-                                    <td class="py-2 px-4 border-b">{{ $i->address }}</td>
-                                @else
-                                    <td class="py-2 px-4 border-b">unset</td>
-                                @endif
-                                <td class="py-2 px-4 border-b">{{ $i->role }}</td>
-                                <td class="py-2 px-4 border-b">
-                                    <form action="">
-                                        <button>Delete User</button>
-                                    </form>
-                                </td>
-                            </tr>
-                        @endif
-                    @endforeach
-                </tbody>
-            </table> --}}
             <table class="table-minimalist">
                 <thead class="bg-[#1b5c60] text-white">
                     <tr>
@@ -81,7 +43,8 @@
                     @foreach ($users as $i)
                         @if ($i->role != 'admin')
                             <tr>
-                                <td><img src="{{ $i->profile_path }}" alt="No Profile">
+                                <td><img src="../storage/profile/{{ $i->profile_path }}" alt="No Profile"
+                                        class="pic">
                                 </td>
                                 <td>{{ $i->name }}</td>
                                 <td>{{ $i->email }}</td>
@@ -97,8 +60,10 @@
                                 @endif
                                 <td>{{ $i->role }}</td>
                                 <td>
-                                    <form action="">
-                                        <button>Delete User</button>
+                                    <form action="{{ route('admin.dashboard.deleteuser', $i->id) }}" method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit">Delete User</button>
                                     </form>
                                 </td>
                             </tr>

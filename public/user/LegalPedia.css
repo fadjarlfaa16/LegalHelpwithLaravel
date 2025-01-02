@@ -76,7 +76,7 @@
     padding: 5px;
 }
 
-.article-content {
+.article-contents {
     padding: 15px;
     flex: 1;
 }
@@ -88,10 +88,6 @@
     text-decoration: none;
 }
 
-.article-title:hover {
-    color: #007bff;
-}
-
 .article-date {
     font-size: 0.9rem;
     color: #777;
@@ -101,6 +97,12 @@
 .article p {
     color: #555;
     line-height: 1.6;
+}
+
+.article img {
+    width: 250px;
+    height: 175px;
+    object-fit: cover;
 }
 
 .article:hover {
@@ -122,6 +124,13 @@
     .news-content .caption {
         margin-top: -55px;
     }
+    .article img {
+        width: 150px;
+        height: 105px;
+    }
+    .article-contents .article-title {
+        font-size: 20px;
+    }
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
@@ -138,6 +147,13 @@
     }
     .news-content .caption {
         margin-top: -45px;
+    }
+    .article img {
+        width: 170px;
+        height: 119px;
+    }
+    .article-contents .article-title {
+        font-size: 25px;
     }
 }
 

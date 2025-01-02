@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../admin/forum.css">
     <link rel="stylesheet" href="../admin/legalpedia.css">
     <link rel="stylesheet" href="../admin/recommended.css">
+    <link rel="stylesheet" href="../admin/crud-recommended.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
@@ -37,12 +38,7 @@
         <div class="profile-section flex flex-col items-center text-center border-b border-gray-700 pb-4 mb-4">
             <img src="https://via.placeholder.com/80" alt="Profile Picture"
                 class="w-20 h-20 rounded-full border-2 border-gray-700 mb-2">
-            <h2 class="text-lg font-bold">Admin</h2>
-            <p class="text-sm text-gray-400">Idle</p>
-            <p class="text-sm font-bold text-green-500">$ -</p>
-            <form action="{{ route('logout') }}">
-                <button type="submit" class="">Logout</button>
-            </form>
+            <h2 class="text-lg font-bold">LegalHelp Admin</h2>
         </div>
         <nav class="mt-4">
             <a href="{{ route('admin.dashboard') }}" class="block py-2 px-4 hover:bg-gray-700 rounded">Users</a>
@@ -51,6 +47,7 @@
             <a href="{{ route('admin.forum.view') }}" class="block py-2 px-4 hover:bg-gray-700 rounded">Forum</a>
             <a href="{{ route('admin.legalpedia.view') }}"
                 class="block py-2 px-4 hover:bg-gray-700 rounded">Legalpedia</a>
+            <a href="{{ route('logout') }}" class="block py-2 px-4 hover:bg-gray-700 rounded">Logout</a>
         </nav>
     </div>
     @if (trim($slot ?? '') !== '')

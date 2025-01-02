@@ -4,3 +4,22 @@
     margin: auto;
     background-color: #fff;
 }
+
+@media (min-width: 400px) and (max-width: 599px) {
+    .content-recommended {
+        width: 100%;
+    }
+}
+
+@media (min-width: 600px) and (max-width: 799px) {
+    .content-recommended {
+        width: 100%;
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media (min-width: 800px) and (max-width: 1279px) {
+    .content-recommended {
+        width: 85%;
+    }
+}

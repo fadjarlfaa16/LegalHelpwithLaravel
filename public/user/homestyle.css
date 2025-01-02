@@ -35,7 +35,8 @@
     margin: 0 auto;
     width: 80%;
     background-color: #fff;
-    height: 2000px;
+    min-height: 100vhpx;
+    padding-bottom: 40px;
 }
 
 .isiKonsul p {
@@ -48,14 +49,22 @@
 }
 
 .isiKonsul img {
-    width: 70%;
-    transform: translateX(20%);
+    width: 230px;
+    height: 230px;
+    transform: translateX(15%);
+    object-fit: cover;
+}
+
+.isiKonsul {
 }
 
 /* Mobile Screen */
 @media (min-width: 400px) and (max-width: 599px) {
     .content-home {
         width: 100%;
+    }
+    .imgcarouselplaceholder {
+        height: 220px;
     }
     .carousel {
         top: -5px;
@@ -74,6 +83,12 @@
     #caption-on-carousel {
         transform: translateY(1.8rem);
     }
+    #caption-on-carousel h2 {
+        font-size: 25px;
+    }
+    #caption-on-carousel p {
+        font-size: 14px;
+    }
     .isiKonsul button {
         font-size: small;
     }
@@ -83,12 +98,19 @@
     .isiKonsul h3 {
         font-size: 19px;
     }
+    .isiKonsul img {
+        width: 100px;
+        height: 100px;
+    }
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media (min-width: 600px) and (max-width: 799px) {
     .content-home {
         width: 90%;
+    }
+    .imgcarouselplaceholder {
+        height: 320px;
     }
     .carousel-inner h2 {
         font-size: 21pt;
@@ -103,6 +125,22 @@
     }
     #caption-on-carousel {
         transform: translateY(2.8rem);
+    }
+    #caption-on-carousel h2 {
+        font-size: 29px;
+    }
+    #caption-on-carousel p {
+        font-size: 16px;
+    }
+    .isiKonsul p {
+        font-size: 12px;
+    }
+    .isiKonsul h3 {
+        font-size: 19px;
+    }
+    .isiKonsul img {
+        width: 150px;
+        height: 150px;
     }
 }
 
@@ -124,6 +162,16 @@
     }
     #caption-on-carousel {
         transform: translateY(2.8rem);
+    }
+    .isiKonsul p {
+        font-size: 12px;
+    }
+    .isiKonsul h3 {
+        font-size: 19px;
+    }
+    .isiKonsul img {
+        width: 180px;
+        height: 180px;
     }
 }
 

@@ -30,11 +30,11 @@
                         <option value="user">Rakyat Sipil</option>
                     </select>
                 </div>
-                <div class="check">
+                {{-- <div class="check">
                     <input type="checkbox" id="cek" />
                     <label for="cek">By accepting this you have agreed our privacy and policy
                         guidelines</label>
-                </div>
+                </div> --}}
                 <button type="submit" id="submit-reg" class="submit-btn">
                     Submit
                 </button>

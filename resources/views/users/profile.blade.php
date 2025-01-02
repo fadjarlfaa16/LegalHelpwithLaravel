@@ -7,13 +7,13 @@
             @else
                 ../storage/profile/{{ Auth::user()->profile_path }} @endif"
                         alt="Profile Picture"
-                        class="w-32 h-32 mx-auto rounded-full border-4 border-blue-500 object-cover">
-                    <form class="mt-8 space-y-5" action="{{ route('consultant.profile.update') }}" method="POST"
+                        class="w-32 h-32 mx-auto rounded-full border-4 border-emerald-600 object-cover">
+                    <form class="mt-3 space-y-5" action="{{ route('users.profile.update') }}" method="POST"
                         enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
                         <label for="profile_path"
-                            class="mt-2 ml-[1%] bg-blue-500 text-white px-3 py-1 text-s rounded-full cursor-pointer hover:bg-blue-600">
+                            class="mt-2 ml-[1%] bg-emerald-600 text-white px-3 py-1 text-s rounded-full cursor-pointer hover:bg-emerald-700 ease-in duration-150">
                             Select Photo
                         </label>
                         <input type="file" name="profile_path" id="profile_path" class="hidden">
@@ -59,13 +59,16 @@
 
 
             <button type="submit"
-                class=" w-full py-3 px-4 bg-blue-500 text-white font-medium rounded-md shadow hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400">
+                class="mt-4 w-full py-3 px-4 bg-emerald-600 text-white font-medium rounded-md shadow hover:bg-emerald-700 ease-in duration-150 focus:outline-none focus:ring-2 focus:ring-blue-400">
                 Save Changes
             </button>
             </form>
         </div>
     </div>
     </div>
+    <x-success-messege>
+        Profile successfully updated!
+    </x-success-messege>
 
 
 </x-user-App>

@@ -13,7 +13,8 @@ class ConsultantController extends Controller
 {
     public function WorkspaceView()
     {
-        $schedule = Schedule::all();
+        $userEmail = Auth::user()->email;
+        $schedule = Schedule::where('consultant_email', $userEmail)->get();
         return view('consultant.workspace', compact('schedule'));
     }
 
@@ -21,6 +22,28 @@ class ConsultantController extends Controller
     {
         $forum = Forum::all();
         return view('consultant.forum', compact('forum'));
+    }
+
+    public function AddForum(Request $request)
+    {
+        $request->validate([
+            'content' => 'required'
+        ]);
+        $user = Auth::user();
+
+        Forum::create([
+            'username' => $user->name,
+            'email' => $user->email,
+            'content' => $request->input('content'),
+            'profile' => $user->profile_path,
+        ]);
+        return redirect('/consultant/forum');
+    }
+    public function DeleteForum($id)
+    {
+        $forum = Forum::findOrFail($id);
+        $forum->delete();
+        return redirect('/consultant/forum');
     }
 
     public function ProfileView()
@@ -38,9 +61,8 @@ class ConsultantController extends Controller
             }
             $originalFileName = $request->file('profile_path')->getClientOriginalName();
 
-            // Simpan file dengan nama aslinya ke storage/public/profile
-            $path = $request->file('profile_path')->storeAs('profile', $originalFileName, 'public');
-
+            // menyimpan file dengan nama aslinya ke storage/public/profile
+            $request->file('profile_path')->storeAs('profile', $originalFileName, 'public');
             $user->profile_path = $originalFileName;
         }
 

@@ -16,11 +16,19 @@ class AdminController extends Controller
     function AdminMainView()
     {
         $users = User::all();
-        $userCount = User::where('role', 'user')->count() - 1;
+        $userCount = User::where('role', 'user')->count();
         $consultantCount = User::where('role', 'consultant')->count() - 1;
         $forumCount = Forum::count();
         $articleCount = Article::count();
         return view('admin.dashboard', compact('users', 'userCount', 'consultantCount', 'forumCount', 'articleCount'));
+    }
+
+    function DeleteUser($id)
+    {
+        $user = User::findOrFail($id);
+        $target = $user->name;
+        $user->delete();
+        return redirect()->route('admin.dashboard')->with('success', $target . ' Successfully removed from sistem');
     }
 
     // RECOMMENDED VIEW
@@ -52,7 +60,7 @@ class AdminController extends Controller
 
         TopConsultant::create($request->only(['user_id', 'position']));
 
-        return redirect()->route('admin.recommended.view')->with('success', 'Top Consultant berhasil ditambahkan!');
+        return redirect()->route('admin.recommended.view')->with('success', 'Top Consultant successfully updated!');
     }
 
     // Membuka Tampilan Edit Top Consultant
@@ -72,7 +80,7 @@ class AdminController extends Controller
 
         $topConsultant = TopConsultant::findOrFail($id);
         $topConsultant->update($request->only(['user_id', 'position']));
-        return redirect()->route('admin.recommended.view')->with('success', 'Top Consultant berhasil diperbarui!');
+        return redirect()->route('admin.recommended.view')->with('success', 'Top Consultant successfully updated!');
     }
 
     // Menghapus Top Consultant
@@ -81,7 +89,7 @@ class AdminController extends Controller
         $topConsultant = TopConsultant::findOrFail($id);
         $topConsultant->delete();
 
-        return redirect()->route('admin.recommended.view')->with('success', 'Top Consultant berhasil dihapus!');
+        return redirect()->route('admin.recommended.view')->with('success', 'Top Article successfully deleted!');
     }
 
     // Tampilan untuk membuat Top Article
@@ -101,7 +109,7 @@ class AdminController extends Controller
 
         TopArticle::create($request->only(['article_id', 'position']));
 
-        return redirect()->route('admin.recommended.view')->with('success', 'Top Consultant berhasil ditambahkan!');
+        return redirect()->route('admin.recommended.view')->with('success', 'Top Article successfully updated!');
     }
 
 
@@ -123,7 +131,7 @@ class AdminController extends Controller
 
         $topArticle = TopArticle::findOrFail($id);
         $topArticle->update($request->only(['article_id', 'position']));
-        return redirect()->route('admin.recommended.view')->with('success', 'Top Consultant berhasil diperbarui!');
+        return redirect()->route('admin.recommended.view')->with('success', 'Top Article successfully updated!');
     }
 
 
@@ -133,7 +141,7 @@ class AdminController extends Controller
         $topArticle = TopArticle::findOrFail($id);
         $topArticle->delete();
 
-        return redirect()->route('admin.recommended.view')->with('success', 'Top Consultant berhasil dihapus!');
+        return redirect()->route('admin.recommended.view')->with('success', 'Top Article successfully deleted!');
     }
 
 
@@ -152,11 +160,8 @@ class AdminController extends Controller
         $forum = Forum::findOrFail($id);
         $forum->delete();
 
-        return redirect('admin.forum.view');
+        return redirect()->route('admin.forum.view')->with('success', ' Successfully removed from sistem');
     }
-
-
-
 
     // Article on LegalPedia
 
@@ -195,7 +200,7 @@ class AdminController extends Controller
             'picture_path' => $picturePath, // Simpan nama asli file
         ]);
 
-        return redirect()->route('admin.legalpedia.view');
+        return redirect()->route('admin.legalpedia.view')->with('success', 'Article succesfully added!');
     }
 
     // Membuka Tampilan edit Artikel
@@ -222,7 +227,7 @@ class AdminController extends Controller
 
         $article->update($request->only(['headline', 'content']));
         $article->save();
-        return redirect()->route('admin.legalpedia.view');
+        return redirect()->route('admin.legalpedia.view')->with('success', 'Article succesfully updated!');
     }
 
     public function DeleteArticle($id)
@@ -230,27 +235,6 @@ class AdminController extends Controller
         $article = Article::findOrFail($id);
         $article->delete();
 
-        return redirect('admin.legalpedia.view');
-    }
-
-
-
-
-
-
-
-
-
-
-
-
-
-    function user()
-    {
-        return view('users.home');
-    }
-    function  consultant()
-    {
-        return view('consultant/');
+        return redirect()->route('admin.legalpedia.view')->with('success', 'Article succesfully removed from system!');
     }
 }

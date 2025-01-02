@@ -1,18 +1,18 @@
 <x-admin-App>
     <div class="content-recommended">
-        <h1>Top Consultants</h1>
+        <h2 class="fw-bold text-center mb-4">TOP CONSULTANT</h2>
 
         @if (session('success'))
-            <div class="alert alert-success">{{ session('success') }}</div>
+            <x-success-messege>{{ session('success') }}</x-success-messege>
         @endif
 
-        <a href="{{ route('admin.recommended.topconsultant.create') }}" class="btn btn-primary mb-3">Tambah Top
-            Consultant</a>
+        <a href="{{ route('admin.recommended.topconsultant.create') }}"
+            class="text-white btn bg-emerald-600 hover:bg-emerald-700 mb-3">Update</a>
         <table class="table-minimalist">
             <thead class="bg-[#1b5c60] text-white">
                 <tr>
                     <th>Position</th>
-                    <th>Name</th>
+
                     <th>Email</th>
                     <th>Action</th>
                 </tr>
@@ -21,7 +21,6 @@
                 @foreach ($topConsultants as $topConsultant)
                     <tr>
                         <td>Top {{ $topConsultant->position }}</td>
-                        <td>{{ $topConsultant->user->name }}</td>
                         <td>{{ $topConsultant->user->email }}</td>
                         <td>
                             <a href="{{ route('admin.recommended.topconsultant.edit', $topConsultant->id) }}"
@@ -43,10 +42,11 @@
 
         <br><br><br>
 
-        <h1>Top Article</h1>
+        <h2 class="fw-bold text-center mb-4">TOP ARTICLE</h2>
 
 
-        <a href="{{ route('admin.recommended.toparticle.create') }}" class="btn btn-primary mb-3">Tambah Top Article</a>
+        <a href="{{ route('admin.recommended.toparticle.create') }}"
+            class="text-white btn bg-emerald-600 hover:bg-emerald-700 mb-3">Update</a>
 
         <table class="table-minimalist">
             <thead class="bg-[#1b5c60] text-white">
@@ -69,7 +69,7 @@
                                 @csrf
                                 @method('DELETE')
                                 <button class="btn btn-danger"
-                                    onclick="return confirm('Yakin ingin menghapus?')">Hapus</button>
+                                    onclick="return confirm('Surely want to remove this?')">Hapus</button>
                             </form>
                         </td>
                     </tr>

@@ -1,6 +1,7 @@
 .content-workspace {
     padding: 30px 2%;
     width: 80%;
+    min-height: 90vh;
     margin: 60px auto 0;
     background-color: #fff;
 }
@@ -49,8 +50,22 @@ tbody tr:hover {
     background-color: #f1f1f1;
 }
 
-/* Responsive Design */
-@media screen and (max-width: 768px) {
+@media (min-width: 400px) and (max-width: 599px) {
+    th,
+    td {
+        font-size: 12px;
+        padding: 8px;
+    }
+    .content-workspace {
+        width: 100%;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media (min-width: 600px) and (max-width: 799px) {
+    .content-workspace {
+        width: 90%;
+    }
     table {
         display: block;
         overflow-x: auto;
@@ -61,12 +76,14 @@ tbody tr:hover {
     td {
         font-size: 14px;
     }
+    .content-workspace {
+        width: 100%;
+    }
 }
 
-@media screen and (max-width: 480px) {
-    th,
-    td {
-        font-size: 12px;
-        padding: 8px;
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media (min-width: 800px) and (max-width: 1279px) {
+    .content-workspace {
+        width: 85%;
     }
 }
